@@ -1,3 +1,5 @@
+//Version actualizada siin branch erroneo
+
 //Incialización de Variables/ Constructores/ Declaracion de arrays.
 let eleccion
 
