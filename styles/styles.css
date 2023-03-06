@@ -1,0 +1,200 @@
+/*& RESETEO GENERAL*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+/*!ESTILOS GENERALES*/
+body {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*~PREHEADER*/
+.preheader {
+  padding: 5px 0;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0px 0px 2.5px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8) ;
+}
+/*~ HEADER*/
+.header-container {
+    width: 100%;
+    position: fixed; 
+}
+header{
+  background-color: rgb(246, 246, 246);
+}
+/*^ Este contiene al nav-> Logo, navmenu, searchinput y simbolos carrito y msjs*/
+#header{
+    display:flex;
+    justify-content:space-around ;
+    background-color: rgb(246, 246, 246);
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0;
+  /* justify-content: space-between; */
+  /* width: 100%; */
+}
+
+/*?Logo y nav menú*/
+
+.logo-section{
+    display: flex;
+}
+
+/*?Solo logo*/
+
+.header-logo {
+    width: 90px;
+    height: 30px;
+  }
+/*^Anclas y Ul´s*/
+.nav-ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+a {
+    font-size: 15px;
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: 600;
+    color: #FF8300;
+}
+/*^Barra de Busqueda*/
+.search-input{
+  width: 20%;
+  margin: 20px 20px;
+  padding: 20px 20px;
+}
+.search-input-btn{
+  border:solid 2px #FF8300;
+  color: #FF8300;
+}
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+/*^Banner*/
+.banner {
+    width: 100%;
+    height: 600px;
+    background-image: url("../img/appliance-banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+/*~  CARD PRODUCTS SECTION*/
+
+  .card-img {
+    width: 100%;
+    height: 70%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .card-text {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    padding:1rem;
+
+  }
+  .card-text p{
+    padding: 10px 0;
+  }
+  .card-text h3 sup{
+    z-index:-1 ;
+  }
+
+  #card-button{
+    margin: 0 auto;
+    padding: 10px;
+  }
+/*~ BANNER PIE DE PAGINA*/
+  .view-products-banner-container {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+/*~ FOOTER*/
+  .view-products-banner {
+    width: 1000px;
+    height: 200px;
+    text-align: center;
+    text-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 220px;
+    border-radius: 5px;
+    color: #fff;
+    background-image: url("../img/bush.jpg");
+    background-size: cover;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .footer{
+    background-color: rgba(255, 131, 0, 0.9);
+    height: 200px;
+    margin-top: 30px;
+  }
+
+/*!ESTILOS FUNCIONALES CON JS*/
+  /*&------------------------------- SearchFilters ------------------------- */
+#productos{
+  max-width: 1100px;
+  margin: 40px auto;
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  justify-items: center;
+
+}
+.product-card {
+  height: 450px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 250px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color:rgba(255, 131, 0, 0.7);
+  transition: all 0.3s ease-out;
+}
+/*! Clase que me permitirá filtrar los rdos que no coincidan con lo que tipeo el user en el buscador*/
+.filter{
+  display: none;
+}
+
+.shadow{
+  /* box-shadow: 50px 50px 30px 500px red; */
+  box-shadow: 10px 50px 50px black;
+  scale: 1.05;
+  
+}
