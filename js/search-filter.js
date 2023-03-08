@@ -1,5 +1,5 @@
 const d = document;
-
+const banner = d.getElementsByClassName('banner')
 export default function searchFilters(input,selector){
 d.addEventListener('keyup', e => {
 if(e.target.matches(input)){//!If--> el orginen del evento conincide con lo que le pase como valor de input entonces
