@@ -390,8 +390,21 @@ a:hover {
 .th{
   text-align: center;
 }
+.tr-color{
+  color: #FF8300;
+}
 
-
+.input__element{
+max-width: 50%;
+}
+.delete{
+  margin-left: 1rem;
+}
+.price{
+  align-content: center;
+  margin: 0;
+  padding-bottom: 3px;
+}
 
 
 

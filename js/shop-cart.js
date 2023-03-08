@@ -59,19 +59,21 @@ console.log(clickButton);
              const tr = d.createElement('tr');
              tr.classList.add('ItemCarrito');
              const content = `
-             <th class="text-bg-dark"scope="row">1</th>
+             <th class=" align-middle text-bg-dark"scope="row">1</th>
                  <td class="table-productos text-bg-dark">
                    <img src=${item.img}>
                  </td>
-                 <td class="tabletitle text-bg-dark">
+                 <td class="align-middle tabletitle text-bg-dark">
                      <h6 class="title">${item.title}</h6>
                  </td>
-                 <td class="table-price text-bg-dark">
-                     <p>${item.price}</p>
+                 <td class="align-middle table-price text-bg-dark">
+                     <p class="price">${item.price}</p>
                  </td>
-                 <td class="table-cantidad text-bg-dark">
-                     <input type="number" min="1" class="input__element" value=${item.cantidad}>
-                     <button class="delete btn btn-danger">x</button>
+                 <td class="align-middle table-cantidad text-bg-dark">
+                    <div class="d-flex justify-content-center">
+                        <input type="number" min="1" class="input__element" value=${item.cantidad}>
+                        <button class="delete btn btn-danger">x</button>
+                    </div>
                  </td>`;
         
          tr.innerHTML = content;
