@@ -35,6 +35,18 @@ console.log(clickButton);
 
 
     function addItemCarrito(newItem){
+
+        const inputElemento = tbody.getElementsByClassName('input__element')
+        for(let i = 0; i < carrito.length; i++){
+            if(carrito[i].title.trim() === newItem.title.trim()){
+                carrito[i].cantidad ++;
+                const inputValue = inputElemento[i];
+                inputValue.value++;
+                return null;
+            }
+        }
+
+
         carrito.push(newItem);
         renderCarrito();
     }
@@ -58,7 +70,7 @@ console.log(clickButton);
                      <p>${item.price}</p>
                  </td>
                  <td class="table-cantidad text-bg-dark">
-                     <input type="number" min="1" value="1">
+                     <input type="number" min="1" class="input__element" value=${item.cantidad}>
                      <button class="delete btn btn-danger">x</button>
                  </td>`;
         
