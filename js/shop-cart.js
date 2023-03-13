@@ -1,5 +1,5 @@
 const d = document;
-let carrito = [];
+const carrito = JSON.parse(localStorage.getItem('carrito'))||[];
 const tbody = d.querySelector('.tbody');
 
 export default function carritoCompras(){
@@ -128,15 +128,22 @@ console.log(clickButton);
      function addLocalStorage(){
         localStorage.setItem('carrito',JSON.stringify(carrito));
      }
-
-
-     window.onload = function(){
-        const localSt = JSON.parse(localStorage.getItem('carrito'));
-        //& Si existe "carrito" en LS entonces lo va a parsear y guardarlo en localSt
-        if(localSt){
-            carrito = localSt;   
-            renderCarrito();  
+     
+     function verificarCarrito(){
+        // const localSt = JSON.parse(localStorage.getItem('carrito'));
+        //& Si existe "carrito" en LS lo renderiza
+        if(carrito != null){  
+            addItemCarrito();
+            renderCarrito(); 
+             
         } 
+        else{
+            addItemCarrito();
+            renderCarrito();
+            
+            
+        }
      }
 }
 
+ 

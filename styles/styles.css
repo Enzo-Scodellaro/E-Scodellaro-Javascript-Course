@@ -197,6 +197,7 @@ a:hover {
   cursor: pointer;
   background-color:rgba(255, 131, 0, 0.7);
   transition: all 0.3s ease-out;
+  /* scale: 0; */
 }
 /*! Clase que me permitirá filtrar los rdos que no coincidan con lo que tipeo el user en el buscador*/
 .filter{
