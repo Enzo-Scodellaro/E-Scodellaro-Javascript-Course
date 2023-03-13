@@ -21,46 +21,46 @@ d.addEventListener('DOMContentLoaded', e => {
 const products = [
     {
         name: "Televisor Smart Led Philips 4K Android",
-        price: "$75.000",
+        price: "$75000",
         img:"./img/products/Tv.jpg"
     },
     {
         name: "Licuadora MABE MB120F 2000W",
-        price: "$22.000",
+        price: "$22000",
         img:"./img/products/Licuadora.jpg"
     },
     {
         name: "Heladera Patrick HPKMB1000B",
-        price: "$169.000",
+        price: "$169000",
         img:"./img/products/heladera.jpg"
     },
     {
         name: "Microondas BGH BG2FKJ 1200W",
-        price: "$53.000",
+        price: "$53000",
         img:"./img/products/microondas.jpg"
 
     },
     {
         name: "Aspiradora ATMA A120FP",
-        price: "$29.999",
+        price: "$29999",
         img:"./img/products/aspiradora.png"
 
     },
     {
         name: " Cafetera ATMA CA9196 automática negra y plata expreso 220V",
-        price: "$63.000",
+        price: "$63000",
         img:"./img/products/cafetera.png"
 
     },
     {
         name: "Heladera Patrick HPKMB1000B",
-        price: "$169.000",
+        price: "$169000",
         img:"./img/products/heladera.jpg"
 
     },
     {
         name: "Tostadora Philips Daily Collection HD4825/95",
-        price: "$21.000",
+        price: "$21000",
         img:"./img/products/tostadora.png"
 
     }

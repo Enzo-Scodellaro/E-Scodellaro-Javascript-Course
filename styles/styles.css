@@ -365,6 +365,10 @@ a:hover {
   padding: 20px 20px;
   width: 100%;
 }
+.tbody{
+  width: fit-content;
+  
+}
 .table-productos{
   display: flex;
 }

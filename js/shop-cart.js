@@ -42,6 +42,7 @@ console.log(clickButton);
                 carrito[i].cantidad ++;
                 const inputValue = inputElemento[i];
                 inputValue.value++;
+                carritoTotal();
                 return null;
             }
         }
@@ -76,9 +77,66 @@ console.log(clickButton);
                     </div>
                  </td>`;
         
-         tr.innerHTML = content;
-         tbody.appendChild(tr);
-         }); 
+        tr.innerHTML = content;
+        tbody.appendChild(tr);
+        tr.querySelector(".delete").addEventListener("click",removeItemCarrito);
+        tr.querySelector(".input__element").addEventListener("change",sumaCantidad);
+         });
+         carritoTotal();
+     }
+
+
+     function carritoTotal(){
+        let total = 0;
+        const itemCartTotal = d.querySelector('.itemCartTotal');
+        carrito.forEach((item) => {
+            const precio = Number(item.price.replace("$",''))
+            total = total + precio*item.cantidad;
+        })
+        itemCartTotal.innerHTML = `Total $${total}`;
+        addLocalStorage();
+     }
+
+    function removeItemCarrito(e){        
+        const buttonDelete = e.target;
+        const tr = buttonDelete.closest('.ItemCarrito');
+        const title = tr.querySelector('.title').textContent;
+        for(let i=0; i < carrito.length; i++){
+            if(carrito[i].title.trim() === title.trim()){
+                carrito.splice(i,1);
+            }
+        }
+        tr.remove();
+        carritoTotal()
+     }
+
+     function sumaCantidad(e){
+        const sumaInput = e.target;
+        const tr = sumaInput.closest(".ItemCarrito");
+        const title = tr.querySelector('.title').textContent;
+        carrito.forEach(item => {
+            if(item.title.trim() === title){
+                sumaInput.value < 1
+                ? (sumaInput.value = 1)
+                : sumaInput.value;
+                item.cantidad = sumaInput.value;
+                carritoTotal()
+            }
+        })
+     }
+
+     function addLocalStorage(){
+        localStorage.setItem('carrito',JSON.stringify(carrito));
+     }
+
+
+     window.onload = function(){
+        const localSt = JSON.parse(localStorage.getItem('carrito'));
+        //& Si existe "carrito" en LS entonces lo va a parsear y guardarlo en localSt
+        if(localSt){
+            carrito = localSt;   
+            renderCarrito();  
+        } 
      }
 }
 
