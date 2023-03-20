@@ -1,5 +1,5 @@
 const d = document;
-const carrito = JSON.parse(localStorage.getItem('carrito'))||[];
+let carrito = JSON.parse(localStorage.getItem('carrito'))||[];
 const tbody = d.querySelector('.tbody');
 
 export default function carritoCompras(){
@@ -35,6 +35,11 @@ console.log(clickButton);
 
 
     function addItemCarrito(newItem){
+        const alert = document.querySelector('.alert')
+        setTimeout( function(){
+            alert.classList.add('hide')
+        },2000)
+        alert.classList.remove('hide');
 
         const inputElemento = tbody.getElementsByClassName('input__element')
         for(let i = 0; i < carrito.length; i++){
@@ -46,9 +51,8 @@ console.log(clickButton);
                 return null;
             }
         }
-
-
         carrito.push(newItem);
+        addLocalStorage()
         renderCarrito();
     }
 
@@ -81,6 +85,7 @@ console.log(clickButton);
         tbody.appendChild(tr);
         tr.querySelector(".delete").addEventListener("click",removeItemCarrito);
         tr.querySelector(".input__element").addEventListener("change",sumaCantidad);
+        
          });
          carritoTotal();
      }
@@ -106,6 +111,13 @@ console.log(clickButton);
                 carrito.splice(i,1);
             }
         }
+
+        const alert = document.querySelector('.remove')
+        setTimeout( function(){
+            alert.classList.add('remove')
+        },2000)
+        alert.classList.remove('remove');
+
         tr.remove();
         carritoTotal()
      }
@@ -130,19 +142,10 @@ console.log(clickButton);
      }
      
      function verificarCarrito(){
-        // const localSt = JSON.parse(localStorage.getItem('carrito'));
-        //& Si existe "carrito" en LS lo renderiza
-        if(carrito != null){  
-            addItemCarrito();
-            renderCarrito(); 
-             
+        let localSt = JSON.parse(localStorage.getItem('carrito'));
+        if((carrito !== undefined)||(carrito !== null)){  
+            carrito = localSt;
         } 
-        else{
-            addItemCarrito();
-            renderCarrito();
-            
-            
-        }
      }
 }
 

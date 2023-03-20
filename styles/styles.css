@@ -267,11 +267,12 @@ a:hover {
 }
 .panel.is-active{
   transform: translate(0,0);
+  z-index: 1500;
 }
   
 .panel-btn{
   position:fixed;
-  z-index: 999; /*Cuando cambiamos el position podemos jugar con las profundidades*/
+  z-index: 1501; /*Cuando cambiamos el position podemos jugar con las profundidades*/
   bottom: 1vh;
   right: 1vh;
   width: 4rem;
@@ -410,8 +411,14 @@ max-width: 50%;
   margin: 0;
   padding-bottom: 3px;
 }
+/*! Alert "producto añadido*/
+.hide, .remove{
+  display: none;
+}
 
-
-
-
+#remove{
+  width: 30%;
+  z-index: 2000;
+  
+}
 
