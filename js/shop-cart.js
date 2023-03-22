@@ -116,12 +116,16 @@ console.log(clickButton);
             title: 'Eliminar producto del carrito?',
             text: "",
             icon: 'warning',
+            iconColor: '#FF8300',
             position: 'center',
             showCancelButton: true,
             confirmButtonText: 'Si',
             cancelButtonText: 'No',
             reverseButtons: true,
             confirmButtonColor:'#FF8300',
+            popup: 'swal2-hide',
+            backdrop: 'swal2-backdrop-hide',
+            
           }).then((result) => {
                 if (result.isConfirmed) {
                 const buttonDelete = e.target;
@@ -141,6 +145,9 @@ console.log(clickButton);
                     timer: 1500,
                     showConfirmButton: false,
                     position: 'top-right',
+                    popup: 'swal2-show',
+                    backdrop: 'swal2-backdrop-show',
+                    
                 })
                  }
                 }) 

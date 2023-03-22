@@ -1,6 +1,6 @@
 //& 3ERA PRE-ENTREGA-------------------------------------
 const d = document;
-
+import login from "./js/login.js";
 import searchFilters from "./js/search-filter.js";
 import hamburguerMenu from "./js/burguermenu.js";
 import darkTheme from "./js/darkTheme.js";
@@ -11,7 +11,8 @@ import carritoCompras from "./js/shop-cart.js";
 d.addEventListener('DOMContentLoaded', e => {
     searchFilters("#card-filter",".product-card");
     hamburguerMenu(".panel-btn", ".panel", ".menu a");// Primer parametro: boton 2do: panel a ocultar. 3ro: link de las opciones del menu
-    darkTheme('.dark-theme-btn','dark-mode')
+    darkTheme('.dark-theme-btn','dark-mode');
+    login('#user-icon')
     // hoverShadow('.product-card');
 })
 
