@@ -411,14 +411,5 @@ max-width: 50%;
   margin: 0;
   padding-bottom: 3px;
 }
-/*! Alert "producto añadido*/
-.hide, .remove{
-  display: none;
-}
 
-#remove{
-  width: 30%;
-  z-index: 2000;
-  
-}
 
