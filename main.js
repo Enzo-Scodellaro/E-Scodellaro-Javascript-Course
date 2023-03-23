@@ -5,6 +5,8 @@ import searchFilters from "./js/search-filter.js";
 import hamburguerMenu from "./js/burguermenu.js";
 import darkTheme from "./js/darkTheme.js";
 import carritoCompras from "./js/shop-cart.js";
+import carousel from "./js/banner-carousel.js";
+import banner from "./js/banner-carousel.js";
 // import hoverShadow from "./js/shadows.js";
 
 
@@ -12,8 +14,8 @@ d.addEventListener('DOMContentLoaded', e => {
     searchFilters("#card-filter",".product-card");
     hamburguerMenu(".panel-btn", ".panel", ".menu a");// Primer parametro: boton 2do: panel a ocultar. 3ro: link de las opciones del menu
     darkTheme('.dark-theme-btn','dark-mode');
-    login('#user-icon')
-    // hoverShadow('.product-card');
+    login('#user-icon');
+    banner();
 })
 
 
