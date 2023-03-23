@@ -1,5 +1,7 @@
 const d = document;
 let carrito = [];
+let localSt = JSON.parse(localStorage.getItem('carrito'));
+
 const tbody = d.querySelector('.tbody');
 
 export default function carritoCompras(){
@@ -31,11 +33,12 @@ console.log(clickButton);
             cantidad: 1,
         }
         addItemCarrito(newItem);
+        
     }
 
 
     function addItemCarrito(newItem){
-
+        
         Swal.fire({
             position: 'top-right',
             icon: 'success',
@@ -63,8 +66,7 @@ console.log(clickButton);
     }
 
 
-    function renderCarrito(){     
-        console.log(carrito);
+    function renderCarrito(){  
         tbody.innerHTML = '';
           carrito.map(item => {
               const tr = d.createElement('tr');
@@ -155,16 +157,6 @@ console.log(clickButton);
         
 
 
-        //  const buttonDelete = e.target;
-        //  const tr = buttonDelete.closest('.ItemCarrito');
-        //  const title = tr.querySelector('.title').textContent;
-        //  for(let i=0; i < carrito.length; i++){
-        //      if(carrito[i].title.trim() === title.trim()){
-        //          carrito.splice(i,1);
-        //      }
-        //  }
-        //  tr.remove();
-         //carritoTotal()
       
 
       function sumaCantidad(e){
@@ -184,13 +176,7 @@ console.log(clickButton);
 
       function addLocalStorage(){
          localStorage.setItem('carrito',JSON.stringify(carrito));
+        
       }
-     
-//      function verificarCarrito(){
-//         let localSt = JSON.parse(localStorage.getItem('carrito'));
-//         if((carrito !== undefined)||(carrito !== null)){  
-//             carrito = localSt;
-//         } 
-//      }
-// }
+
     }
