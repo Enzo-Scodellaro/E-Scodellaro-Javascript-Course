@@ -19,8 +19,9 @@ export default function login(userBtn){
               }
               return { login: login, password: password }
             }
-
-          }).then((result) => {
+          })
+          
+          .then((result) => {
             Swal.fire(`
               Login: ${result.value.login}
               Password: ${result.value.password}
